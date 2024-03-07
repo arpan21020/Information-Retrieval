@@ -14,7 +14,7 @@ class Dataset:
         print(f"\r |{bar}| {percent:.2f}%",end="\r")
 
     def get_total(self):
-        for i in ['Delhi/delhi.html','Haryana/hr.html','Maharashtra/maharashtra.html','Rajasthan/rajasthan.html','UP/up.html']:
+        for i in ['Delhi/delhi.html','Haryana/hr.html','Maharashtra/maharashtra.html','Rajasthan/rajasthan.html','UP/up.html','Kerala/kerala.html']:
             filepath='./Dataset/RawHTMlfiles/'+i
             with open(filepath,"rb") as f:
                 data=f.read()
@@ -65,6 +65,7 @@ class Dataset:
         return 
     def compiling_rawHTML_files(self):
         print("Compiling Raw HTML files...")
+        self.get_scheme_list("/Kerala/kerala.html","Kerala")
         self.get_scheme_list("/Delhi/delhi.html","Delhi")
         self.get_scheme_list("/Haryana/hr.html","Harayana")
         self.get_scheme_list("/Maharashtra/maharashtra.html","Maharashtra")
